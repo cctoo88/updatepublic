@@ -53,7 +53,8 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         AppUpdater appUpdater = new AppUpdater(this)
                 .setDisplay(Display.DIALOG)
-                .setUpdateFrom(UpdateFrom.GITHUB);
+                .setUpdateFrom(UpdateFrom.GITHUB)
+                .setGitHubUserAndRepo("ttw684", "update");
         appUpdater.start();
     }
 
