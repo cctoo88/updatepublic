@@ -1,6 +1,8 @@
 package com.github.javiersantos.appupdater.objects;
 
-import android.support.annotation.NonNull;
+//import android.support.annotation.NonNull;
+
+import androidx.annotation.NonNull;
 
 public class Version implements Comparable<Version> {
     private String version;

@@ -1,5 +1,6 @@
 package com.github.javiersantos.appupdater;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -7,12 +8,15 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.media.RingtoneManager;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.NotificationCompat;
-import android.support.v7.app.AlertDialog;
+//import android.support.design.widget.Snackbar;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.core.app.NotificationCompat;
+//import android.support.v7.app.AlertDialog;
 import android.view.View;
 
 import com.github.javiersantos.appupdater.enums.UpdateFrom;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.net.URL;
 
@@ -48,7 +52,7 @@ class UtilsDisplay {
             snackbarTime = Snackbar.LENGTH_LONG;
         }*/
 
-        Snackbar snackbar = Snackbar.make(activity.findViewById(android.R.id.content), content, snackbarTime);
+        @SuppressLint("WrongConstant") Snackbar snackbar = Snackbar.make(activity.findViewById(android.R.id.content), content, snackbarTime);
         snackbar.setAction(context.getResources().getString(R.string.appupdater_btn_update), new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,6 +62,7 @@ class UtilsDisplay {
         return snackbar;
     }
 
+    @SuppressLint("WrongConstant")
     static Snackbar showUpdateNotAvailableSnackbar(final Context context, String content, Boolean indefinite) {
         Activity activity = (Activity) context;
         int snackbarTime = indefinite ? Snackbar.LENGTH_INDEFINITE : Snackbar.LENGTH_LONG;
