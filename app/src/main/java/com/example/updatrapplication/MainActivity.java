@@ -53,8 +53,12 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         AppUpdater appUpdater = new AppUpdater(this)
                 .setDisplay(Display.DIALOG)
-                .setUpdateFrom(UpdateFrom.GITHUB)
-                .setGitHubUserAndRepo("ttw684", "update");
+                .setUpdateFrom(UpdateFrom.JSON)
+                .setUpdateJSON("https://hagithub.home/ttw684/update/blob/master/update-changelog.json" );  //"https://raw.githubusercontent.com/yourUserName/yourRepoName/master/app/update-changelog.json"
+//                new AppUpdater(this)
+//                .setDisplay(Display.DIALOG)
+//                .setUpdateFrom(UpdateFrom.GITHUB)
+//                .setGitHubUserAndRepo("ttw684", "update");
         appUpdater.start();
     }
 
